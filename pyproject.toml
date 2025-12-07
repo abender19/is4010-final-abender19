@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filestat"
+version = "1.0.0"
+description = "A CLI tool for analyzing files and directories"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Alec Bender" }]
+requires-python = ">=3.10"
+dependencies = [
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+filestat = "filestat.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[tool.setuptools]
+packages = ["filestat"]
